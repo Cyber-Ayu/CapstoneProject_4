@@ -1,27 +1,22 @@
-import os
 from selenium.webdriver.common.by import By
+from pages.base_page import BasePage
 
-
-class FileUploadPage:
-    """Page Object for File Upload Page."""
-
-    HEADER = (By.TAG_NAME, "h3")
+class FileUploadPage(BasePage):
+    FILE_UPLOAD_LINK = (By.LINK_TEXT, "File Upload")
+    FILE_UPLOAD_HEADER = (By.TAG_NAME, "h3")
     CHOOSE_FILE = (By.ID, "file-upload")
     UPLOAD_BUTTON = (By.ID, "file-submit")
-    UPLOAD_SUCCESS = (By.TAG_NAME, "h3")
+    UPLOAD_SUCCESS_TEXT = (By.TAG_NAME, "h3")
 
-    def __init__(self, driver):
-        self.driver = driver
+    def navigate_to_file_upload(self):
+        self.click_element(self.FILE_UPLOAD_LINK)
 
-    def get_header_text(self):
-        return self.driver.find_element(*self.HEADER).text
+    def verify_upload_page_header(self):
+        return self.get_element_text(self.FILE_UPLOAD_HEADER)
 
     def upload_file(self, file_path):
-        if not os.path.exists(file_path):
-            with open(file_path, "w") as f:
-                f.write("This is a test file for upload.")  # Ensure the file exists
         self.driver.find_element(*self.CHOOSE_FILE).send_keys(file_path)
-        self.driver.find_element(*self.UPLOAD_BUTTON).click()
+        self.click_element(self.UPLOAD_BUTTON)
 
-    def get_success_message(self):
-        return self.driver.find_element(*self.UPLOAD_SUCCESS).text
+    def get_upload_success_message(self):
+        return self.get_element_text(self.UPLOAD_SUCCESS_TEXT)

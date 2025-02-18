@@ -1,20 +1,20 @@
 from selenium.webdriver.common.by import By
+from pages.base_page import BasePage
 
+class CheckboxesPage(BasePage):
+    CHECKBOX_LINK = (By.LINK_TEXT, "Checkboxes")
+    CHECKBOX_HEADER = (By.TAG_NAME, "h3")
+    CHECKBOX1 = (By.XPATH, "//input[1]")
+    CHECKBOX2 = (By.XPATH, "//input[2]")
 
-class CheckboxesPage:
-    """Page Object for Checkboxes Page."""
+    def navigate_to_checkboxes(self):
+        self.click_element(self.CHECKBOX_LINK)
 
-    HEADER = (By.TAG_NAME, "h3")
-    CHECKBOXES = (By.CSS_SELECTOR, "input[type='checkbox']")
+    def verify_checkbox_page_header(self):
+        return self.get_element_text(self.CHECKBOX_HEADER)
 
-    def __init__(self, driver):
-        self.driver = driver
+    def is_checkbox1_selected(self):
+        return self.is_element_selected(self.CHECKBOX1)
 
-    def get_header_text(self):
-        return self.driver.find_element(*self.HEADER).text
-
-    def get_checkbox_states(self):
-        checkboxes = self.driver.find_elements(*self.CHECKBOXES)
-        return [
-            checkbox.is_selected() for checkbox in checkboxes
-        ]  # Returns [False, True]
+    def is_checkbox2_selected(self):
+        return self.is_element_selected(self.CHECKBOX2)
