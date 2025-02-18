@@ -1,5 +1,5 @@
 <suite name="CapstoneProject">
-    <test name="BDD Tests">
+    <test name="RestAssured API tets">
         <classes>
             <class name="com.virtusa.tests.CountryTranslationTest"/>
         </classes>
