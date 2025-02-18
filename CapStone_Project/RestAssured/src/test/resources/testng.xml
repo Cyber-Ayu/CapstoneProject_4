@@ -1,0 +1,7 @@
+<suite name="CapstoneProject">
+    <test name="BDD Tests">
+        <classes>
+            <class name="com.virtusa.tests.CountryTranslationTest"/>
+        </classes>
+    </test>
+</suite>
