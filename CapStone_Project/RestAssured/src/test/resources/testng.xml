@@ -1,7 +1,7 @@
 <suite name="CapstoneProject">
     <test name="RestAssured API tests">
         <classes>
-            <class name="com.virtusa.tests.CountryTranslationTest"/>
+            <class name="com.project.tests.CountryTranslationTest"/>
         </classes>
     </test>
 </suite>

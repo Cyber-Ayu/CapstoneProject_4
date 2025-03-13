@@ -1,4 +1,4 @@
-package com.virtusa;
+package com.project;
 
 /**
  * Hello world!

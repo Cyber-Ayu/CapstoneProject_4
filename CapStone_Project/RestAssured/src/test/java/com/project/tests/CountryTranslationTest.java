@@ -1,12 +1,12 @@
-package com.virtusa.tests;
+package com.project.tests;
 
-import com.virtusa.utils.ExtentReportManager;
+import com.project.utils.ExtentReportManager;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
-import com.virtusa.utils.ExcelUtils;
+import com.project.utils.ExcelUtils;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
