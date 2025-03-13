@@ -1,6 +1,6 @@
-package com.virtusa.stepDefinitions;
+package com.project.stepDefinitions;
 
-import com.virtusa.base.BaseClass;
+import com.project.base.BaseClass;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 

@@ -1,7 +1,7 @@
 <suite name="CapstoneProject">
     <test name="BDD Tests">
         <classes>
-            <class name="com.virtusa.runners.TestRunner"/>
+            <class name="com.project.runners.TestRunner"/>
         </classes>
     </test>
 </suite>

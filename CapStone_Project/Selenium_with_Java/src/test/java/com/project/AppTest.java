@@ -1,4 +1,4 @@
-package com.virtusa;
+package com.project;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
